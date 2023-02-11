@@ -1,0 +1,12 @@
+.main{
+  height: 3000px;
+  padding-top: 120px;
+  padding-left: 50px;
+  background-color: white;
+
+}
+
+.shoe-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

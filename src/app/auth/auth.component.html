@@ -1,0 +1,17 @@
+<div class="title">
+  <h3>Become a member and get exclusive offers!</h3>
+</div>
+<div class="auth-container">
+  <form (ngSubmit)="onAuthenticate(f)" #f="ngForm">
+    <div class="input-field-container">
+      <label for="email">Email:</label>
+      <input class="email-input-field" type="text" placeholder="Enter you Email">
+      <label for="password">Password:</label>
+      <input class="password-input-field" type="text" placeholder="Enter you Password">
+    </div>
+    <div class="buttons-container">
+      <button class="auth-button" type="submit">{{isLoginMode ? 'Login' : 'Sign Up'}}</button>
+      <button class="switch-button" (click)="onSwitchMode()">Switch to {{isLoginMode ? 'Sign up' : 'Login'}}</button>
+    </div>
+  </form>
+</div>
