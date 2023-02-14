@@ -7,6 +7,8 @@ import { Shoe } from '../shoe.model';
   styleUrls: ['./shoe-item.component.css']
 })
 export class ShoeItemComponent {
-  @Input()
-  shoe!: Shoe;
+  @Input() shoe!: Shoe;
+
+  @Input() shoeIndex!: number;
+
 }

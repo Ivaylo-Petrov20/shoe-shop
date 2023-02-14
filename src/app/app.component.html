@@ -1,6 +1,4 @@
-<app-header (featureSelected) = "onNavigate($event)"></app-header>
+<app-header></app-header>
 <main class="main">
-    <app-shoes *ngIf="loadedFeature === 'shoe'"></app-shoes>
-    <app-auth *ngIf="loadedFeature === 'auth'"></app-auth>
-    <app-create *ngIf="loadedFeature === 'create'"></app-create>
+    <router-outlet></router-outlet>
 </main>

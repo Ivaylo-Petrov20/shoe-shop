@@ -24,6 +24,7 @@
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
 
+
 .email-input-field,
 .password-input-field{
   display: block;
@@ -34,6 +35,7 @@
   margin-bottom: 34px;
   margin-top: 6px;
   width: 100%;
+  resize: both;
 }
 
 .buttons-container{

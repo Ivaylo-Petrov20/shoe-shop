@@ -45,7 +45,8 @@
   margin-bottom: 5px;
 }
 
-.add-btn{
+.add-btn,
+.details-btn{
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -59,6 +60,11 @@
   transition: background-color 0.15s;
 }
 
-.add-btn:hover{
+.details-btn{
+  margin-left: 20px;
+}
+
+.add-btn:hover,
+.details-btn:hover{
   background-color: rgb(220, 220, 220);
 }

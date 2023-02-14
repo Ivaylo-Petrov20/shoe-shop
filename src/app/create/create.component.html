@@ -1,1 +1,21 @@
-<p>create works!</p>
+<div class="title">
+  <h3>Create and customize your own shoe</h3>
+</div>
+<div class="create-container">
+  <form [formGroup]="shoeForm" (ngSubmit)="onSubmit()">
+    <div class="input-field-container">
+        <label for="shoe-name">Name:</label>
+        <input class="name-input-field" type="text" formControlName="name">
+        <label for="shoe-image">Image:</label>
+        <input class="image-input-field" type="text" formControlName="imagePath">
+        <label for="shoe-price">Price:</label>
+        <input class="price-input-field" type="text" formControlName="price">
+        <label for="shoe-description">Description:</label>
+        <input class="description-input-field" type="text" formControlName="description">
+    </div>
+    <div class="buttons-container">
+      <button type="submit" class="create-btn">Create Shoe</button>
+      <button type="button" class="cancel-btn">Cancel</button>
+    </div>
+  </form>
+</div>

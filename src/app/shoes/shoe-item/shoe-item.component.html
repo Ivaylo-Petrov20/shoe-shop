@@ -5,6 +5,9 @@
   <div class="cart-container">
     <p class="shoe-name">{{shoe.name}}</p>
     <p class="shoe-price">{{shoe.price + "&#36;"}}</p>
-    <button class="add-btn">Add to Cart</button>
+    <div class="buttons">
+      <button class="add-btn">Add to Cart</button>
+      <button class="details-btn" routerLink="/shoes/{{shoeIndex}}">Details</button>
+    </div>
   </div>
 </div>

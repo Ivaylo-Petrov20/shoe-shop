@@ -1,0 +1,24 @@
+<div class="shoe-details-container">
+  <div class="img-container">
+    <img class="shoe-image"
+    [src]="shoe.imagePath">
+  </div>
+  <div class="shoe-info-container">
+    <div class="shoe-name-container">
+      <label for="shoe-name" class="label-name">Name:</label>
+      <p class="shoe-name">{{shoe.name}}</p>
+    </div>
+    <div class="shoe-price-container">
+      <label for="shoe-price" class="label-price">Price:</label>
+      <p class="shoe-price">{{shoe.price}}</p>
+    </div>
+    <div class="shoe-desc-container">
+      <label for="shoe-descr" class="label-description">Description:</label>
+      <p class="shoe-description">{{shoe.description}}</p>
+    </div>
+    <div class="buttons">
+      <button class="edit-btn" routerLink="/shoes/{{id}}/edit">Edit</button>
+      <button class="delete-btn" (click)="onDelete(id)">Delete</button>
+    </div>
+  </div>
+</div>
