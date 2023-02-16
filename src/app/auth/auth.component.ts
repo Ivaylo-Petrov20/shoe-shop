@@ -34,12 +34,12 @@ export class AuthComponent {
     }
 
     authObs.subscribe(resData => {
-      console.log(resData);
       this.isLoading = false;
       this.router.navigate(['/shoes']);
     }, errorMessage => {
       console.log(errorMessage);
       this.error = errorMessage;
+      alert(this.error);
       this.isLoading = false;
     });
 
