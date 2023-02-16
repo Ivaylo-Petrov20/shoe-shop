@@ -67,3 +67,8 @@
 .switch-button:hover{
   background-color: rgb(187, 64, 58);
 }
+
+.spinner-container{
+  margin: auto;
+}
+

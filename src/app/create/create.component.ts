@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataStorageService } from '../shared/data-storage.service';
 import { ShoeService } from '../shoes/shoe.service';
 
 @Component({
@@ -15,10 +16,16 @@ export class CreateComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private shoeService: ShoeService,
-    private router: Router){}
+    private router: Router,
+    private dataStorageService: DataStorageService){}
 
   onSubmit(){
     this.shoeService.addShoe(this.shoeForm.value);
+    this.router.navigate(['/shoes']);
+    this.dataStorageService.storeShoes();
+  }
+
+  onCancel(){
     this.router.navigate(['/shoes']);
   }
 

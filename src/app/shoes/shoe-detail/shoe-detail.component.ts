@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Shoe } from '../shoe.model';
 import { ShoeService } from '../shoe.service';
 
@@ -15,7 +16,8 @@ export class ShoeDetailComponent implements OnInit{
   constructor(
     private shoeService: ShoeService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private dataStorageService: DataStorageService
     ){}
 
     ngOnInit(){
@@ -30,6 +32,7 @@ export class ShoeDetailComponent implements OnInit{
 
     onDelete(id: number){
       this.shoeService.deleteShoe(id);
+      this.dataStorageService.storeShoes();
       this.router.navigate(['/shoes']);
     }
 }

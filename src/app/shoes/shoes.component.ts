@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Shoe } from './shoe.model';
 import { ShoeService } from './shoe.service';
 
@@ -12,8 +13,10 @@ export class ShoesComponent implements OnInit{
 
   constructor(private shoeService: ShoeService){}
 
+
   ngOnInit(){
     this.shoes = this.shoeService.getShoes();
   }
-  
+
+
 }

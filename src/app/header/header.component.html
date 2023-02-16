@@ -5,13 +5,13 @@
       class="shoe-shop-logo"
       src="https://media.istockphoto.com/id/1362933313/vector/sports-basketball-shoes-design-vector-illustration.jpg?s=612x612&w=0&k=20&c=B6FNXUkkoOaAM6zXOIkHPiYWD0iUhUKXZraiR3uYW-k=">
     </a>
-    <li class="shoes-list">
+    <li class="shoes-list" *ngIf="isAuthanticated">
       <a routerLink="/shoes">Shoes</a>
     </li>
-    <li class="authenticate">
+    <li class="authenticate" *ngIf="!isAuthanticated">
       <a routerLink="/auth">Authenticate</a>
     </li>
-    <li class="create-shoe">
+    <li class="create-shoe" *ngIf="isAuthanticated">
       <a routerLink="/create">Create Shoe</a>
     </li>
   </div>
@@ -23,8 +23,8 @@
     <button class="shopping-cart-button">
       <fa-icon style="font-size: 16px;" [icon]="faCartShopping"></fa-icon>
     </button>
-    <li class="logout">
-      <a href="#">Logout</a>
+    <li class="logout" *ngIf="isAuthanticated">
+      <a (click)="onLogout()">Logout</a>
     </li>
   </div>
 </nav>

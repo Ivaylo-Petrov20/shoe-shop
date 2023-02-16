@@ -1,17 +1,37 @@
 <div class="title">
   <h3>Become a member and get exclusive offers!</h3>
 </div>
+<div class="alert alert-danger" *ngIf="error">
+  <p>{{ error }}</p>
+</div>
 <div class="auth-container">
-  <form (ngSubmit)="onAuthenticate(f)" #f="ngForm">
+  <div *ngIf="isLoading" class="spinner-container">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
     <div class="input-field-container">
       <label for="email">Email:</label>
-      <input class="email-input-field" type="text" placeholder="Enter you Email">
+      <input
+      class="email-input-field"
+      type="text"
+      placeholder="Enter you Email"
+      ngModel
+      name="email"
+      required
+      email>
       <label for="password">Password:</label>
-      <input class="password-input-field" type="text" placeholder="Enter you Password">
+      <input
+      class="password-input-field"
+      type="password"
+      placeholder="Enter you Password"
+      ngModel
+      name="password"
+      required
+      minlength="6">
     </div>
     <div class="buttons-container">
-      <button class="auth-button" type="submit">{{isLoginMode ? 'Login' : 'Sign Up'}}</button>
-      <button class="switch-button" (click)="onSwitchMode()">Switch to {{isLoginMode ? 'Sign up' : 'Login'}}</button>
+      <button class="auth-button" type="submit" [disabled]="!authForm.valid">{{isLoginMode ? 'Login' : 'Sign Up'}}</button>
+      <button class="switch-button" type="button" (click)="onSwitchMode()">Switch to {{isLoginMode ? 'Sign up' : 'Login'}}</button>
     </div>
   </form>
 </div>
