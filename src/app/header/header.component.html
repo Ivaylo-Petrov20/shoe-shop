@@ -16,11 +16,11 @@
     </li>
   </div>
   <div class="right-section">
-    <input class="search-bar" type="text" placeholder="Search...">
-    <button class="search-btn">
+    <input class="search-bar" type="text" placeholder="Search..." #inputSearch>
+    <button class="search-btn" (click)="onSearch(inputSearch)">
       <fa-icon style="font-size: 16px;" [icon]="faMagnifyingGlass"></fa-icon>
     </button>
-    <button class="shopping-cart-button">
+    <button class="shopping-cart-button" routerLink="/cart">
       <fa-icon style="font-size: 16px;" [icon]="faCartShopping"></fa-icon>
     </button>
     <li class="logout" *ngIf="isAuthanticated">

@@ -6,7 +6,7 @@
     <p class="shoe-name">{{shoe.name}}</p>
     <p class="shoe-price">{{shoe.price + "&#36;"}}</p>
     <div class="buttons">
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" (click)="onAddToCart()">Add to Cart</button>
       <button class="details-btn" routerLink="/shoes/{{shoeIndex}}">Details</button>
     </div>
   </div>

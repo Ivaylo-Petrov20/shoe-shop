@@ -15,6 +15,7 @@ import { ShoeDetailComponent } from './shoes/shoe-detail/shoe-detail.component';
 import { ShoeEditComponent } from './shoes/shoe-edit/shoe-edit.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 
@@ -28,7 +29,8 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     CreateComponent,
     ShoeDetailComponent,
     ShoeEditComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

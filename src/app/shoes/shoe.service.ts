@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { Subject } from "rxjs";
 
 import { Shoe } from "./shoe.model";
@@ -6,6 +7,9 @@ import { Shoe } from "./shoe.model";
 @Injectable({providedIn: 'root'})
 export class ShoeService{
   shoesChanged = new Subject<Shoe[]>();
+  isSearchMode = false;
+  private filteredShoes: Shoe[] = [];
+  searchMode: boolean = false;
 
   // private shoes: Shoe[] = [
   //   new Shoe(
@@ -29,6 +33,7 @@ export class ShoeService{
   // ];
 
   private shoes: Shoe[] = [];
+  private cartItems: Shoe[] = [];
 
 
   setShoes(shoes: Shoe[]){
@@ -37,7 +42,11 @@ export class ShoeService{
   }
 
   getShoes(){
-    return this.shoes.slice();
+    if(!this.searchMode){
+      return this.shoes.slice();
+    }else{
+      return this.filteredShoes.slice();
+    }
   }
 
   getShoe(index: number){
@@ -53,6 +62,31 @@ export class ShoeService{
     this.shoes[index] = newShoe;
     this.shoesChanged.next(this.shoes.slice());
   }
+
+  addToCart(newShoe: Shoe){
+    this.cartItems.push(newShoe);
+    return this.cartItems.slice();
+  }
+
+  emptyCart(){
+    this.cartItems = [];
+    return this.cartItems.slice();
+  }
+
+  getCartItems(){
+    return this.cartItems.slice();
+  }
+
+
+  searchShoe(input: string){
+    if(input !== ''){
+      this.searchMode = true;
+      this.filteredShoes = this.shoes.filter(shoe => shoe.name.toLowerCase().includes(input.toLowerCase()));
+    }else{
+      this.searchMode = false;
+    }
+  }
+
 
   deleteShoe(index: number){
     this.shoes.splice(index, 1);

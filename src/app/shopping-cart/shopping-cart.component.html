@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="empty-cart-container" *ngIf="shoppingCartItems.length == 0">
+    <h3 class="empty-cart-title">Your shopping cart is empty.</h3>
+  </div>
+  <div class="shoes-container" *ngIf="shoppingCartItems.length > 0">
+    <div *ngFor="let shoe of shoppingCartItems" class="flexbox">
+      <div class="image-container">
+        <img class="shoe-pic" [src]="shoe.imagePath">
+      </div>
+      <div class="info-container">
+        <div class="name">{{shoe.name}}</div>
+        <div class="price">Price: {{shoe.price + " &#36;"}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <div class="buttons-container">
+      <button class="checkout-btn" (click)="onCheckout()">Checkout</button>
+      <button class="delete-btn" (click)="onDeleteItem()">Empty cart</button>
+    </div>
+    <div class="total-sum-container">
+      <div class="total-sum">Total Sum: {{sum + " &#36;"}}</div>
+    </div>
+  </div>
+</div>
