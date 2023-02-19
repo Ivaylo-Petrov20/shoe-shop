@@ -16,6 +16,7 @@
   display: flex;
   margin: auto;
   width: 35%;
+  min-width: 400px;
   height: 19%;
   justify-content: center;
   align-content: center;

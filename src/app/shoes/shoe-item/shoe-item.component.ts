@@ -16,6 +16,7 @@ export class ShoeItemComponent {
 
   onAddToCart(){
     this.shoeService.addToCart(this.shoe);
+    alert('Shoe added to cart.');
   }
 
 }
