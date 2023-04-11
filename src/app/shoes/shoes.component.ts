@@ -13,10 +13,8 @@ export class ShoesComponent implements OnInit{
 
   constructor(private shoeService: ShoeService){}
 
-
   ngOnInit(){
     this.shoes = this.shoeService.getShoes();
   }
-
-
+  
 }

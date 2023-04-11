@@ -4,7 +4,7 @@
   flex-direction: row;
   height: 70px;
   justify-content: space-between;
-  background-color: white;
+  background-color: #222222;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,7 +43,7 @@
 .logout a,
 .create-shoe a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .shoes-list::marker,
@@ -66,19 +66,21 @@
 
 .search-bar{
   height: 40px;
+  color: white;
+  background: #575757;
   padding-left: 8px;
   border-radius: 2px;
   font-size: 16px;
-  border: 1px solid rgb(192, 192, 192);
+  border: none;
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.15);
 }
 
 .search-btn{
   height: 40px;
   width: 60px;
-  color: rbg(240, 240, 240);
+  background-color: rgb(173, 173, 173);
   margin-left: -1px;
-  border: 1px solid rgb(192, 192, 192);
+  border: #ccc;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: background-color 0.15s;
@@ -92,8 +94,9 @@
 .shopping-cart-button{
   height: 40px;
   width: 40px;
+  background: rgb(173, 173, 173);
   border-radius: 20px;
-  border: none;
+  border: #ccc;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
   margin-left: 30px;
   cursor: pointer;
@@ -104,5 +107,7 @@
 .shopping-cart-button:hover{
   background-color: rgb(220, 220, 220);
 }
+
+
 
 

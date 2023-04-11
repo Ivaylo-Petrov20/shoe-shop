@@ -18,5 +18,4 @@ export class ShoeItemComponent {
     this.shoeService.addToCart(this.shoe);
     alert('Shoe added to cart.');
   }
-
 }
